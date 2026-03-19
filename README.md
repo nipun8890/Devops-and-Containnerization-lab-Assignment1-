@@ -4,29 +4,9 @@
 **Subject:** Containerization and DevOps  
 
 ---
-## 📸 Screenshots
-## 📸 Screenshots
 
-### 🔹 Docker Compose Running
-![Compose](screenshots/screenshot1.png)
 
-### 🔹 Running Containers
-![Containers](screenshots/screenshot2.png)
 
-### 🔹 Network Inspect
-![Network](screenshots/screenshot3.png)
-
-### 🔹 Container IP Address
-![IP](screenshots/screenshot4.png)
-
-### 🔹 Health API
-![Health](screenshots/screenshot5.png)
-
-### 🔹 Insert API
-![Insert](screenshots/screenshot6.png)
-
-### 🔹 Fetch API
-![Fetch](screenshots/screenshot7.png)
 ##  Overview
 
 This project demonstrates a containerized web application using **FastAPI** and **PostgreSQL**.  
