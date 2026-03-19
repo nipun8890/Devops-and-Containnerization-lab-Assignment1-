@@ -1,20 +1,167 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Assignment 1</title>
+  <title>DevOps Assignment 1</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1, h2, h3 {
+      color: #0f766e;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #0f766e;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    .btn:hover {
+      background: #115e59;
+    }
+
+    pre {
+      background: #f1f1f1;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background: #0f766e;
+      color: white;
+    }
+
+    th, td {
+      padding: 10px;
+    }
+  </style>
 </head>
 
-<body style="text-align:center; font-family:Arial; padding:50px;">
+<body>
 
-<h1>🚀 DevOps Assignment 1</h1>
+<div class="container">
 
-<p>Click below to view all files:</p>
+<h1> DevOps Assignment 1</h1>
 
-<a href="https://github.com/nipun8890/Devops-and-Containnerization-lab-Assignment1-" target="_blank">
-  <button style="padding:10px 20px; font-size:18px;">
-    View Assignment Files
-  </button>
+<p><b>Subject:</b> Containerization and DevOps</p>
+
+<!-- BUTTON ADDED -->
+<a class="btn" href="https://github.com/nipun8890/Devops-and-Containnerization-lab-Assignment1-" target="_blank">
+  📂 View Assignment Files
 </a>
+
+<h2>Overview</h2>
+<p>
+This project demonstrates a containerized web application using FastAPI and PostgreSQL.
+Both services run in separate Docker containers and are orchestrated using Docker Compose.
+Networking is implemented using IPvlan with static IP assignment.
+</p>
+
+<h2>Project Architecture</h2>
+<pre>
+Client → Backend (FastAPI) → PostgreSQL → Volume
+</pre>
+
+<h2>Prerequisites</h2>
+<pre>
+docker --version
+docker compose version
+</pre>
+
+<h2>Project Structure</h2>
+<pre>
+backend/
+database/
+docker-compose.yml
+</pre>
+
+<h2>Steps</h2>
+
+<h3>Step 1</h3>
+<pre>
+mkdir docker-webapp
+cd docker-webapp
+</pre>
+
+<h3>Step 2</h3>
+<pre>
+mkdir backend
+mkdir database
+</pre>
+
+<h3>Step 3</h3>
+<pre>
+docker network create -d ipvlan ...
+</pre>
+
+<h3>Step 4</h3>
+<pre>
+docker compose up --build
+</pre>
+
+<h2>API Endpoints</h2>
+<ul>
+<li>GET /health</li>
+<li>POST /items</li>
+<li>GET /items</li>
+</ul>
+
+<h2>Build Optimization</h2>
+<ul>
+<li>Multi-stage builds</li>
+<li>Slim images</li>
+<li>.dockerignore</li>
+<li>Non-root user</li>
+</ul>
+
+<h2>Image Size Comparison</h2>
+<table>
+<tr><th>Image</th><th>Size</th></tr>
+<tr><td>python:3.11</td><td>~1GB</td></tr>
+<tr><td>python:3.11-slim</td><td>~150MB</td></tr>
+</table>
+
+<h2>Conclusion</h2>
+<p>
+This project demonstrates containerization, networking, and persistent storage using Docker.
+</p>
+
+<h2>Author</h2>
+<p>
+Nipun Agrawal<br>
+B.Tech Computer Science
+</p>
+
+</div>
 
 </body>
 </html>
