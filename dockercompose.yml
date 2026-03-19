@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    networks:
+      my_macvlan:
+        ipv4_address: 192.168.1.10
+    environment:
+      DB_HOST: 192.168.1.11
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydb
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15-alpine
+    networks:
+      my_macvlan:
+        ipv4_address: 192.168.1.11
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: mydb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  pgdata:
+
+networks:
+  my_macvlan:
+    external: true
